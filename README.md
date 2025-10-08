@@ -4,7 +4,7 @@ The following will allow you to have a setup where you can write your code on yo
 Instructions look kinda long but I just wanted to put the commands as clearly as possible whenever possible. It is made so that anyone can figure it out, but I can provide some assistance if I got time (or pay me and I'll set it up for you lol)
 
 - run: `wsl --install -d Ubuntu` on powershell admin terminal 
-- Inside wsl: `sudo apt install gcc ssh`
+- Inside wsl: `sudo apt update; sudo apt install gcc ssh`
 - Install in VSCode the WSL extension
 - Copy ssh configs and private keys into wsl at ~/.ssh/ 
 	- You also have to `chmod 600 [the key]` in order to use it. 
