@@ -22,7 +22,7 @@ Instructions look kinda long but I just wanted to put the commands as clearly as
 	- `code libpynq`
 
 ## Troubleshooting: 
-- I cant see the stdout (printf output): it will put the output into your terminal when you do the \n
+- I cant see the stdout (printf output): the output will be printed it reaches a \n or an input request. 
 - It seems to be stuck after running the long ssh command: The board is not properly connected, check for the green light. Unfortunately this doesn't fix the instability of the power delivery. Pro tip, connect the board to a phone charger. In case this is not available just reboot the board until it works :(
 
 ## Slightly Technical Note
