@@ -4,7 +4,8 @@ The following will allow you to have a setup where you can write your code on yo
 Instructions look kinda long but I just wanted to put the commands as clearly as possible whenever possible. It is made so that anyone can figure it out, but I can provide some assistance if I got time (or pay me and I'll set it up for you lol)
 
 - run: `wsl --install -d Ubuntu` on powershell admin terminal 
-- Inside wsl: `sudo apt update; sudo apt install gcc ssh`
+- Inside wsl: `sudo apt update; sudo apt install gcc ssh make`
+- Inside wsl: configure your git credentials (email and username) 
 - Install in VSCode the WSL extension
 - Copy ssh configs and private keys into wsl at ~/.ssh/ 
 	- You also have to `chmod 600 [the key]` in order to use it. 
@@ -12,11 +13,15 @@ Instructions look kinda long but I just wanted to put the commands as clearly as
 - Installing git on both: 
 	- // on the board on ~/libpynq-5EWC0-2023-v0.2.6
 	- `touch .gitignore` and paste the contents of the one in this repo into there
-	- Replace the contents in (relative path) applications/end.mk with the ones in this repo. You could also just add the deploy definition in the makefile just in case I did an accidental edit to anything else lol. 
+	- Replace the contents in (relative path) applications/end.mk with the ones in this repo. You could also just add the deploy definition (include LOCATION as well) in the makefile just in case I did an accidental edit to anything else lol. 
 	- `git init`
+	- NOTE: You need to have your git email and username set up before the next step
+   	- `git add --all`
+   	- `git commit -m "first commit"
+   	- `git push origin master`
 	- `git clone --bare . ~/libpynq.git`
 	- `git remote add origin ~/libpynq.git`
-	- // on the pc
+	- // on the pc (within WSL) 
 	- `cd ~`
 	- `git clone pynq:libpynq.git libpynq` // assumes pynq is the address to your board
 	- `code libpynq`
